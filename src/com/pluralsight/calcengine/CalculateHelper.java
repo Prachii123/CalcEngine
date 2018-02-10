@@ -6,10 +6,10 @@ public class CalculateHelper {
     private static final char MULTIPLY_SYMBOL = '*';
     private static final char DIVIDE_SYMBOL = '/';
 
-    MathCommand command;
-    double leftValue;
-    double rightValue;
-    double result;
+    private MathCommand command;
+    private double leftValue;
+    private double rightValue;
+    private double result;
 
     public void process(String statement) throws InvalidStatementException{
         // add 1.0 2.0

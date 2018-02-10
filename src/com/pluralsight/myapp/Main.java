@@ -1,4 +1,6 @@
-package com.pluralsight.calcengine;
+package com.pluralsight.myapp;
+
+import com.pluralsight.calcengine.*;
 
 public class Main {
 
@@ -27,7 +29,6 @@ public class Main {
                     System.out.println(" original exception: "+e.getCause().getMessage());
             }
         }
-
 
     }
 
