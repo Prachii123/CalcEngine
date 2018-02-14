@@ -7,11 +7,30 @@ public class Main {
     public static void main(String[] args) {
 //        useMathEquation();
 //        useCalculatorBase();
+          useCalculateHelper();
 
+          String[] statements = {
+                  "add 25.0 92.0",       // 25.0 + 92.0 = 117.0
+                  "power 5.0 2.0"        // 5.0 ^ 2.0 = 25.0
+          };
+
+          DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
+                  new Adder(),
+                  new PowerOf()  });
+
+          for(String statement:statements) {
+              String output = helper.process(statement);
+              System.out.println("#####");
+              System.out.println(output);
+          }
+
+    }
+
+    static void useCalculateHelper() {
         String[] statements = {
-                "add 1.0",
-                "add xx 25.0",
-                "addX 0.0 0.0",
+                "add 1.0",      //Error : incorrect number of values
+                "add xx 25.0",   // Error : non-numeric data
+                "addX 0.0 0.0",   // Error : invalid command
                 "divide 100.0 50.0",   // 100.0 / 50.0 = 2.0
                 "add 25.0 92.0",       // 25.0 + 92.0 = 117.0
                 "subtract 225.0 17.0", // 225.0 - 17.0 = 108.0
@@ -29,7 +48,6 @@ public class Main {
                     System.out.println(" original exception: "+e.getCause().getMessage());
             }
         }
-
     }
 
     static void useMathEquation() {

@@ -86,6 +86,7 @@ public class CalculateHelper {
                 break;
         }
 
+        // Code to build output string
         StringBuilder sb = new StringBuilder(20);
         sb.append(leftValue);
         sb.append(' ');
